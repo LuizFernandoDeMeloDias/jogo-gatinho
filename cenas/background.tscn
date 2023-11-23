@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/backgrounds/arbustus.png" type="Texture" id=1]
+[ext_resource path="res://codigos/managements/background.gd" type="Script" id=2]
+[ext_resource path="res://sprites/backgrounds/background_fundo.png" type="Texture" id=3]
+[ext_resource path="res://sprites/backgrounds/background_Arvores.png" type="Texture" id=4]
+[ext_resource path="res://cenas/color_size.tscn" type="PackedScene" id=5]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource( 2 )
+can_process = true
+layer_speed = [ 1, 1, 1, 1 ]
+
+[node name="fundo" type="ParallaxLayer" parent="."]
+position = Vector2( 1, 0 )
+motion_offset = Vector2( 450, 0 )
+motion_mirroring = Vector2( 300, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="texture" type="TextureRect" parent="fundo"]
+margin_right = 450.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="arvores2" type="ParallaxLayer" parent="."]
+position = Vector2( 1, 0 )
+motion_scale = Vector2( -0.05, 1 )
+motion_offset = Vector2( 450, 0 )
+motion_mirroring = Vector2( 450, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="texture" type="TextureRect" parent="arvores2"]
+modulate = Color( 0.34902, 0.34902, 0.34902, 1 )
+margin_right = 450.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="arvores" type="ParallaxLayer" parent="."]
+position = Vector2( 1, 0 )
+motion_scale = Vector2( 0.5, 1 )
+motion_offset = Vector2( 450, 0 )
+motion_mirroring = Vector2( 450, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="texture" type="TextureRect" parent="arvores"]
+modulate = Color( 0.623529, 0.623529, 0.623529, 1 )
+margin_right = 450.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="arbustos" type="ParallaxLayer" parent="."]
+position = Vector2( 0, 168 )
+motion_offset = Vector2( 450, 0 )
+motion_mirroring = Vector2( 450, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="texture" type="TextureRect" parent="arbustos"]
+modulate = Color( 0.870588, 0.870588, 0.870588, 1 )
+margin_right = 450.0
+margin_bottom = 64.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="color_size" parent="arbustos" instance=ExtResource( 5 )]
+visible = false
+color = Color( 0.529412, 0.529412, 0.529412, 1 )

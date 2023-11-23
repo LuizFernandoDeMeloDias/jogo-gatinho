@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://recursos/floor.tres" type="TileSet" id=1]
+[ext_resource path="res://recursos/decoration_tile.tres" type="TileSet" id=2]
+[ext_resource path="res://cenas/tile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://cenas/background.tscn" type="PackedScene" id=4]
+[ext_resource path="res://cenas/color_size.tscn" type="PackedScene" id=5]
+
+[node name="level1" type="Node2D"]
+
+[node name="level_designe" type="Node2D" parent="."]
+position = Vector2( 34, 445 )
+
+[node name="chao" parent="level_designe" instance=ExtResource( 3 )]
+tile_set = ExtResource( 1 )
+tile_data = PoolIntArray( 196608, 4, 0, 196609, 4, 1, 196610, 4, 1, 196611, 4, 1, 196612, 4, 1, 196613, 4, 1, 196614, 4, 2, 196619, 4, 0, 196620, 4, 1, 196621, 4, 1, 196622, 4, 1, 196623, 4, 1, 196624, 4, 2, 262144, 4, 65536, 262145, 4, 65537, 262146, 4, 65537, 262147, 4, 65537, 262148, 4, 65537, 262149, 4, 65537, 262150, 4, 65538, 262155, 4, 65536, 262156, 4, 65537, 262157, 4, 65537, 262158, 4, 65537, 262159, 4, 65537, 262160, 4, 65538, 327680, 4, 131072, 327681, 4, 131073, 327682, 4, 131073, 327683, 4, 131073, 327684, 4, 131073, 327685, 4, 131073, 327686, 4, 131074, 327691, 4, 131072, 327692, 4, 131073, 327693, 4, 131073, 327694, 4, 131073, 327695, 4, 131073, 327696, 4, 131074, 524293, 4, 0, 524294, 4, 1, 524295, 4, 1, 524296, 4, 1, 524297, 4, 1, 524298, 4, 1, 524299, 4, 1, 524300, 4, 1, 524301, 4, 2, 589829, 4, 65536, 589830, 4, 65537, 589831, 4, 65537, 589832, 4, 65537, 589833, 4, 65537, 589834, 4, 65537, 589835, 4, 65537, 589836, 4, 65537, 589837, 4, 65538, 655365, 4, 65536, 655366, 4, 65537, 655367, 4, 65537, 655368, 4, 65537, 655369, 4, 65537, 655370, 4, 65537, 655371, 4, 65537, 655372, 4, 65537, 655373, 4, 65538, 720901, 4, 131072, 720902, 4, 131073, 720903, 4, 131073, 720904, 4, 131073, 720905, 4, 131073, 720906, 4, 131073, 720907, 4, 131073, 720908, 4, 131073, 720909, 4, 131074 )
+
+[node name="decoration_medium" parent="level_designe" instance=ExtResource( 3 )]
+tile_set = ExtResource( 2 )
+tile_data = PoolIntArray( 65540, 2, 0, 131074, 0, 0, 131077, 1, 0, 131078, 1, 0 )
+
+[node name="color_size" parent="level_designe" instance=ExtResource( 5 )]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]
