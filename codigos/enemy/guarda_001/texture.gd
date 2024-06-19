@@ -33,7 +33,9 @@ func _on_animation_finished(anim_name: String):
 			enemy.set_physics_process(true)
 			
 		"Morte":
+			animation.play("respirandoMorto")
 			enemy.morrer()
+			
 		
 		"preparando_ataque":
 			enemy.pode_atacar = true

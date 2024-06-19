@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://codigos/enemy/guarda_001/texture.gd" type="Script" id=1]
 [ext_resource path="res://inimigo1/guarda-Sheet-export.png" type="Texture" id=2]
@@ -185,6 +185,22 @@ tracks/0/keys = {
 "values": [ 8, 9, 10, 11, 12 ]
 }
 
+[sub_resource type="Animation" id=23]
+resource_name = "respirandoMorto"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 23, 24, 25, 24, 23 ]
+}
+
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 16, 32 )
@@ -247,7 +263,7 @@ detection_area_position = 15
 
 [node name="texture" parent="." index="0"]
 texture = ExtResource( 2 )
-hframes = 5
+hframes = 6
 vframes = 5
 frame = 6
 script = ExtResource( 1 )
@@ -277,6 +293,7 @@ anims/correndo = SubResource( 2 )
 anims/parado = SubResource( 3 )
 anims/parado_ataque = SubResource( 10 )
 anims/preparando_ataque = SubResource( 11 )
+anims/respirandoMorto = SubResource( 23 )
 
 [node name="floor_ray" parent="." index="6"]
 position = Vector2( 12, 8 )
@@ -289,6 +306,7 @@ visible = false
 position = Vector2( 2, -44 )
 frames = SubResource( 22 )
 animation = "puto"
+frame = 4
 speed_scale = 2.0
 playing = true
 script = ExtResource( 6 )
